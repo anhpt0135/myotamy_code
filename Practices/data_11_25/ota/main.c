@@ -10,6 +10,18 @@
 //delivered data, and the size of that data is size multiplied with nmemb.
 //If this callback is not set, libcurl instead uses 'fwrite' by default.
 //The the write_data is a callback function must match this prototype
+typedef enum eOTAErrorCode
+    {
+    eOTAErrDownLoadSuccess,
+    eOTAErrDownLoadFail,
+    eOTAErrNetworkFail,
+    eOTAErrFirmwareUpToDate,
+    eOTAErrFirmwareUpgrading,
+    eOTAErrSystemErr,
+    eOTAErrInvalid,
+    } eOTAErrorCode;
+
+eOTAErrorCode conf_log_status = eOTAErrInvalid;
 
 size_t write_data(void *ptr, size_t size, size_t nmemb, FILE* stream){
 	size_t written = fwrite(ptr, size, nmemb, stream);
@@ -18,7 +30,8 @@ size_t write_data(void *ptr, size_t size, size_t nmemb, FILE* stream){
 
 int read_file_by_line(char *path, char buff, line_num, int size);
 int checkout_analytic_version(void);
-void download_file(char *url, char *filepath);
+int download_file(char *url, char *filepath);
+int ota_check_and_download(void)
 
 int main(void){
 	struct stat st = {0};
@@ -63,34 +76,47 @@ int checkout_analytic_version(void){
 	//download file analytic_log_xx.xx.xx.infor
 	snprintf(url, sizeof(url), "%s/%s", sServerURL, info_filename);// url=ota.hubble.in/ota1/0335_patch/analytic_log_xx.xx.xx.infor
 	snprintf(info_filepath, sizeof(info_filepath, "/tmp/%s", info_filename);//info_filepath="/tmp/analytic_log_xx.xx.xx.infor"
-	download_file(url, info_filepath);
+	if(download_file(url, info_filepath) < 0){
+		return -1;
+	}
 	
 }
 
-int read_file_by_line(char *path, char buff, line_num, int size){
+int read_file_by_line(char *path, char *buff, int line_num, int size){
 	int ret = 0;
-	FILE *fp;
+	FILE *fp = NULL;
 	fp = fopen(path, "r");
 	char ch;
 	int i=0;
-	if(fp != NULL){
+	int line = 0;
+	if(fp == NULL){
 		printf("Cannot load file %s\n", path);
 		return -1;
 	}
-	while(line_num--){
-		do{
+
+	while(1){
 		ch = fgetc(fp);
-		buff[i] = ch;
-		i++;
-		if(i >= size)
-			return 0;
-		}while(ch !=  '\n');
-		buff[i] = '\n';
+		if(ch == EOF){
+			printf("end of file\n");
+			break;
+		}
+		if(line == (line_num -1)){
+			if(ch != '\n'){
+				buff[i] = ch;
+				i++;
+				if(i >= size){
+					printf("out of buffer\n");
+					return 0;
+				}
+			}
+		}
+		if(ch == '\n')
+			line++;
 	}
 	return ret;
 }
 
-void download_file(char *url, char *filepath){
+int download_file(char *url, char *filepath){
 	CURL *curl;
 	FILE *fp;
 	CURLcode res;
@@ -120,5 +146,30 @@ void download_file(char *url, char *filepath){
 		printf("Can't load the download analytic_log file \n");
 		return -2;
 	}
+	// Compare lastest version whether matched with FW ver ?
+
+	if(strcmp(current_version, latest_version)!=0){
+		printf("The current version and the latest version are not match\n");
+		return -2;
+
+	}
+
+	if(conf_md5_check(info_filepath, "mnt/config/syslog.conf", 2) == 0){//Default_MD5_line = 2
+		conf_log_status = eOTAErrFirmwareUpToDate;//
+		return conf_log_status;
+	}
+
+	return 0;
+
+}
+
+int ota_check_and_download(void){
+	//check whether an available package already stored in /mnt/cache/fwupgrade
+	/*
+	/mnt/cache/fwupgrade # ls
+0335-03.30.27.fw.pkg      hubble_ota_pkg            hubble_ota_sig
+0335-03.30.27.sha512      hubble_ota_pkg_decrypted
+
+	*/
 
 }
