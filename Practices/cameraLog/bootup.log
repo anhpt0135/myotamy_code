@@ -1,0 +1,327 @@
+~ # Thu 01/01/70 00:00:24 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 3
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 4
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 5
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 10 reg: 6
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 7
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 10 reg: 8
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 9
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 10
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 11
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 12
+Thu 01/01/70 00:00:25 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 13
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 0 reg: 14
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:927) Update status 128 reg: 15
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_talkback_handler.c:49) LWP id is 628
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:497) [CV0255]: MJPEG video starting 513
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:499) LWP id is 627
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:754) LWP id is 626
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:756) Init CV2055 context
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:763) [CV0255]: PCM streaming starting 513
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_cmd_handler.c:1253) Start CV2055 handler thread 513 . Wifi channel: 7
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:1013) Send read internal falsh success
+Thu 01/01/70 00:00:26 [INFO] [CAM_MEDIA]: (cv2055spi_cmd_handler.c:350) [get_internal_flash_calback] new PU
+killall: udhcpc: no process killed
+udhcpc (v1.19.4) started
+Sending discover...
+Sending select for 192.168.13.44...
+Lease of 192.168.13.44 obtained, lease time 86400
+deleting routers
+Thu 01/01/70 00:00:27 [INFO] [CAM_HW]: (hw_network.c:237) Got CONNECTED from wpa_cli_action
+Thu 01/01/70 00:00:27 [INFO] [CAM_HW]: (hw_network.c:578) Got NWK_CMD_WPA_CONNECTED from wpa_cli_action
+Thu 01/01/70 00:00:27 [INFO] [CAM_HW]: (hw_nwk_core.c:127) "killall udhcpc" return 256 retry 0
+Thu 01/01/70 00:00:27 [INFO] [CAM_HW]: (hw_network.c:396) MAC address is 000AE22FFFD5
+route: SIOCDELRT: No such process
+adding dns 8.8.8.8
+adding dns 192.168.13.1
+RUN NTP script here!!
+Found ntp.hubble.in on sever config. Will use it as sys_url
+Run NTP apps with list of server
+Thu 01/01/70 00:00:28 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 1 reg: 1
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_nwk_core.c:127) "/sbin/udhcpc -n -iwlan0 -s/usr/local/share/udhcpc/default.script -x hostname:BTCam-00-0A-E2-2F-FF-D50
+Run NTP apps with list of server
+ntpd -n -q -p ntp.hubble.in
+Thu 01/01/70 00:00:28 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:631) change resolution hw enc 2
+Thu 01/01/70 00:00:28 [INFO] [CAM_MEDIA]: (hw_cv.c:89) change_resolution_mjpeg 640x360
+Thu 01/01/70 00:00:28 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:398) Change new res: 640 x 360 crop: 0
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:63) TEMPMON: Day offset 20
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:73) TEMPMON: Night offset 20
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:83) TEMPMON: Compensation updtime day 299
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:93) TEMPMON: Compensation updtime night 299
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:103) TEMPMON: Compensation ratio -1
+Thu 01/01/70 00:00:28 [INFO] [CAM_HW]: (hw_temperature.c:113) TEMPMON: Compensation NVCONF_FTEST_TEMP_OFFSET, 0
++++++++++++++ Hublization Network connected 30 +++++++++++++++++++++++++++++++
+WAIT LED_EVENT===
+WAIT LED_EVENT===
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (hw_network.c:603) Connect to route fail and retry
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (hw_network.c:608) Connected to route with dynamic ip address
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (hw_network.c:852) Send callback to app layer status: 2 
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_network.c:247) network call=2
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_network.c:166) ************ Run NTP to get time from hubble server ************ 
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_NET_DISCONECT===
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_NET_DISCONECT====
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=0,   new_event=LED_E_NET_DISCONECT
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_PAIRING_TIMEOUT===
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_PAIRING_TIMEOUT====
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=0,   new_event=LED_E_PAIRING_TIMEOUT
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_DETECT_IP===
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_DETECT_IP====
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=0,   new_event=LED_E_DETECT_IP
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_led_sm.c:310) =========CONNECTED_ROUTER=======
+Thu 01/01/70 00:00:29 [INFO] [CAM_HW]: (cam_network.c:527) Start ping with 31 times retry.
+Fri Sep 20 17:04:23 GMT-7 2019
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:850) NWK_STATUS_ROUTERCONNECTED access internet success
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_PING_SUCCESS===
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:954) NTP isn't updated yet. Running NTP script!!!
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:166) ************ Run NTP to get time from hubble server ************ 
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:116) CURL got date time: Fri, 20 Sep 2019 10:04:23 GMT^M
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:131) Convert to Epoch time = 1568948663
+Thu 01/01/70 00:00:30 [INFO] [CAM_HW]: (cam_network.c:136) Set date time cmd: date -s "@1568973863"
+Fri 09/20/19 10:04:23 [INFO] [CAM_HW]: (cam_network.c:154) Update time using CURL successfully, proceed to NTPD for more accuracy
+killall: bootupquerry: no process killed
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1836) Finish creating thread handling motion detected
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1732) LWP id is 676
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (scheduling.c:90) Reload new MVR config
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (scheduling.c:116) Error Json parse
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1666) [MVR SCHEDUALING] MVR Table init successfully, proceed to create thread
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1213) Enter motion_detection_configure
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:2340) LWP id is 677
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (scheduling.c:221) Do MVR Schedule
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (scheduling.c:241) current time<5>[17:4]
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (scheduling.c:272) MVR schedule is disabled
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:2353) MVR Schedule : next time 24937 , time_to_wait 1568998800
+Fri 09/20/19 10:04:23 [ERROR] [CAM_MEDIA]: (motiondtc_engine.c:2140) SubscriptionChanged- disable MVR due to Free-Tier
+Fri 09/20/19 10:04:23 [INFO] [CAM_HW]: (cam_network.c:800) cam connected internet
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:2144) Configured subcription: Type (0) - Disable recording by subcription (1)
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1307) Zone detection is off
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (hw_motion_detection.c:291) Multimedia initialized successfully!
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 255 reg: 2
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (hw_motion_detection.c:328) Motion detection  initialized successfully
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (hw_motion_detection.c:159) LWP id is 678
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1340) Set motion detection status OFF
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1352) Set motion sensitivity 1
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (hw_motion_detection.c:440) Set new sensitivity 5 to motion detection
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1355) Init HW Motion Detection successfully
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1420) Motion configure: Source (0)
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1423) Motion configure: Active(26), cool-down(10), cool-off(60)
+Fri 09/20/19 10:04:23 [INFO] [CAM_MEDIA]: (motiondtc_engine.c:1680) LWP id is 675
+Fri 09/20/19 10:04:23 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_PING_SUCCESS====
+Fri 09/20/19 10:04:23 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=3,   new_event=LED_E_PING_SUCCESS
+Fri 09/20/19 10:04:23 [INFO] [CAM_HW]: (cam_led_sm.c:332) ========CONNECTED_SERVER========
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hubble_system.c:65) "killall -15 bootupquerry" return 256
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hubble_system.c:72) "/usr/local/bin/app/bootupquerry &" return 0
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_network.c:809) Create pthread update ip adress success
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hw_network.c:778) Get wifi information
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_network.c:1311) ip_address=192.168.13.44,   interface_name = wlan0
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_network.c:396) server=cs.hubble.in
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hubble_server_api.c:1408) hubble_update_new_firmware_version
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hubble_server_api.c:1416) Update camera IP 
+>>>>>>>> Backup user config  <<<<<<<<<<
+WAIT LED_EVENT===
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (hw_network.c:778) Get wifi information
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_network.c:1311) ip_address=192.168.13.44,   interface_name = wlan0
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_hw_manage_dbus_method.c:917) value=192.168.13.44,    ret=0
+Fri 09/20/19 10:04:24 [INFO] [BOOT_QUERRY]: (engine.c:298) Local IP 192.168.13.44
+Fri 09/20/19 10:04:24 [INFO] [BOOT_QUERRY]: (engine.c:303) Start pthread get orbweb info
+Fri 09/20/19 10:04:24 [INFO] [CAM_HW]: (cam_network.c:890) Force restart mqtts_client
+Fri 09/20/19 10:04:24 [INFO] [BOOT_QUERRY]: (engine.c:1052) cam_bootup_init_orbweb_pthread: Get SID and PWD from server
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (hubble_server_api.c:1232) HUBBLE_GET_NEO_INFO
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (json_handler.c:306) RMC VERSION 04_00
+Fri 09/20/19 10:04:25 [INFO] [CAM_HW]: (hw_network.c:778) Get wifi information
+Fri 09/20/19 10:04:25 [INFO] [CAM_HW]: (cam_network.c:1311) ip_address=192.168.13.44,   interface_name = wlan0
+Fri 09/20/19 10:04:25 [INFO] [CAM_HW]: (cam_hw_manage_dbus_method.c:917) value=192.168.13.44,    ret=0
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (engine.c:321) json str: {"firmware_version":"03.30.26","attributes":{"ms":0,"me":1,"vs":0,"vt":25,"hs":1,"ls":0,"ht:
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (engine.c:554) retEncrypt: 0, len: 222
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (engine.c:559) Found same bootup querry string. Send empty json contain()!!!
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (engine.c:583) cam_bootup_init_cache exit ret: 0
+Fri 09/20/19 10:04:25 [INFO] [BOOT_QUERRY]: (hubble_server_api.c:976) hubble_bootup_update_config
+killall: mqtts_client: no process killed
+WAIT LED_EVENT===
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:489) Type:.jpeg, thread ID:702
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:401) Main directory:/mnt/cache/storage
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:489) Type:.flv, thread ID:699
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:401) Main directory:/mnt/cache/storage
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:489) Type:.jpg, thread ID:700
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:401) Main directory:/mnt/cache/storage
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:489) Type:.log.tar.gz, thread ID:701
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:401) Main directory:/mnt/cache/storage
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:411) Upload directory:/mnt/cache/storage/Upload
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:411) Upload directory:/mnt/cache/storage/Upload
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:411) Upload directory:/mnt/cache/storage/Upload
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:411) Upload directory:/mnt/cache/storage/Upload
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:283) Upgrade package already there
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:283) Upgrade package already there
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:283) Upgrade package already there
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:101) hubblestorage_get_diskfree /mnt/cache/storage 55052 kB
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:101) hubblestorage_get_diskfree /mnt/cache/storage 55052 kB
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (hubble_storage.c:101) hubblestorage_get_diskfree /mnt/cache/storage 55052 kB
+Fri 09/20/19 10:04:25 [INFO] [FTP]: (main.c:534) clip_recording_signal=1, .flv
+Fri 09/20/19 10:04:25 [INFO] [CAM_HW]: (hubble_system.c:65) "killall -15 mqtts_client" return 256
+Fri 09/20/19 10:04:25 [INFO] [CAM_HW]: (hubble_system.c:72) "/usr/local/bin/app/mqtts_client &" return 0
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (main.c:595) mqtts_client v2.0 start
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (main.c:596) Current Task ID 704
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_network.c:659) Ip address: 103.195.5.108
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_network.c:674) Ip address: 103.195.5.108 get from hostname correct
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_DETECT_IP===
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_DETECT_IP====
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=4,   new_event=LED_E_DETECT_IP
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_network.c:700) Write ip address: 103.195.5.108 orWeb get from hostname rdz.orbwebsys.com success
+Fri 09/20/19 10:04:26 [INFO] [CAM_HW]: (cam_network.c:907) Result read orbweb info: -1 
+Fri 09/20/19 10:04:26 [ERROR] [CAM_HW]: (cam_network.c:922) Information of the M2M application invalid
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=get_udid
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (system_callback.c:500) get UDID
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (cmd_sys.c:237) cmd_get_udid, value=010335000AE22FFFD5BPJGSAGE, ret=0
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:304) HTTP response: (68) get_udid: 010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (pcwrapper.c:146) get udid success
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (pcwrapper.c:152) udid=010335000AE22FFFD5BPJGSAGE,  response=get_udid: 010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=get_model
+Fri 09/20/19 10:04:26 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 62 reg: 3
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (system_callback.c:505) get model
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (cmd_sys.c:276) cmd_get_model, value=0335, ret=0
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:304) HTTP response: (67) get_model: 0335
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (pcwrapper.c:257) model=0335,  response=get_model: 0335
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=get_version
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (system_callback.c:494) get version
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (cmd_sys.c:198) cmd_get_version, value=03.30.26, ret=0
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:304) HTTP response: (2) get_version: 03.30.26
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (authencation_callback.c:60) Get master key, ret=0
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (cmd_ath.c:233) o, value=yCNbvuFNxIwstP7a, ret=0
+Fri 09/20/19 10:04:26 [INFO] [HTTP]: (http_server.c:304) HTTP response: (57) get_masterkey: yCNbvuFNxIwstP7a
+Fri 09/20/19 10:04:26 [INFO] [MQTT]: (main.c:691) ===Download certs===
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (pcwrapper.c:245) g_model=0335
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (pcwrapper.c:279) g_version=03.30.26
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (main.c:1185) All Certs file is valid no need to download, Copying CA File
+Fri 09/20/19 10:04:27 [ERROR] [MQTT]: (pcwrapper.c:399) "cp /usr/local/etc/ca.crt /mnt/config/hubble_config/ca.crt" return 0
+Fri 09/20/19 10:04:27 [ERROR] [MQTT]: (pcwrapper.c:399) "cp /usr/local/etc/client.crt /mnt/config/hubble_config/client.crt" return 0
+Fri 09/20/19 10:04:27 [ERROR] [MQTT]: (pcwrapper.c:399) "cp /usr/local/etc/client.key /mnt/config/hubble_config/client.key" return 0
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (main.c:736) ====MQTTs take cert link===
+Fri 09/20/19 10:04:27 [ERROR] [MQTT]: (pcwrapper.c:355) ERROR USE WRONG KEY NOT SUPPORT 'authen.serverURI'
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=get_cs_url
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (cmd_ath.c:261) cmd_get_cs_url 
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (authencation_callback.c:75) get NVCONF_SERVER_API, ret=0
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (cmd_ath.c:279) cmd_get_cs_url, value=cs.hubble.in, ret=0
+Fri 09/20/19 10:04:27 [INFO] [HTTP]: (http_server.c:304) HTTP response: (15) get_cs_url: cs.hubble.in
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (pcwrapper.c:217) serverName=cs.hubble.in,  response=get_cs_url: cs.hubble.in
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (main.c:994) __________[ToanTM][NU]API Server cs.hubble.in
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (pcwrapper.c:245) g_model=0335
+Fri 09/20/19 10:04:27 [INFO] [MQTT]: (pcwrapper.c:279) g_version=03.30.26
+killall: m2m: no process killed
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (http_parser_request.c:265) error=200,input="NULL",output="", 1568973868
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:1090) Store new SID and PWD to the camera
+Fri 09/20/19 10:04:28 [INFO] [CAM_HW]: (cam_network.c:907) Result read orbweb info: 0 
+Fri 09/20/19 10:04:28 [INFO] [CAM_HW]: (http_parser_request.c:265) error=200,input="NULL",output="", 1568973868
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (http_parser_request.c:265) error=200,input="POST /v5/devices/bootup.json",output="", 1568973868
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:333) cam_bootupinit_engine Send empty
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:606) cam_bootup_create_json_history File is exist! Delete file.
+Fri 09/20/19 10:04:28 [INFO] [CAM_HW]: (hubble_server_api.c:1419) https_client_request() ret 200 
+Fri 09/20/19 10:04:28 [INFO] [CAM_HW]: (cam_network.c:427) Change local ip  -> 192.168.13.44
+Fri 09/20/19 10:04:28 [INFO] [CAM_HW]: (cam_network.c:440) Update ip address success
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:617) retEncrypt: 0, len data: 223
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:410) cam_bootupinit_engine create history successful
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (engine.c:434) res={"status":200,"message":"Success!","data":{"upload_token":"yaVWQJOzKDGEZx3L","plan_id":"freemium"}
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (subscription.c:63) json_string {"status":200,"message":"Success!","data":{"upload_token":"yaVWQJOzKDGEZx3L","plan_in
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (subscription.c:86) Suscription freemium
+Fri 09/20/19 10:04:28 [INFO] [BOOT_QUERRY]: (subscription.c:35) Current sub 0, new sub is 0
+Fri 09/20/19 10:04:29 [INFO] [BOOT_QUERRY]: (hubble_system.c:72) "rm -f /mnt/cache/storageUpload/Flv/*" return 0
+Fri 09/20/19 10:04:29 [INFO] [BOOT_QUERRY]: (engine.c:457) Subscription sync result: 0
+Fri 09/20/19 10:04:29 [INFO] [BOOT_QUERRY]: (engine.c:1150) cam_bootup_get_mqtts_url: Parse MQTTS URL (ssl://production-08d01ecfc24e37b55-mqtt.hubble.in:8883)
+Fri 09/20/19 10:04:29 [INFO] [BOOT_QUERRY]: (engine.c:467) Get firmware URL result: -3
+Fri 09/20/19 10:04:29 [INFO] [CAM_HW]: (hubble_system.c:65) "killall -15 m2m" return 256
+Fri 09/20/19 10:04:29 [INFO] [CAM_HW]: (cam_network.c:915) run Neo App cmd=/usr/local/bin/m2m host DLIJPITDVSQ2H1R59BJR 103.195.5.108 525eac96df2b42f397cd41b681&
+Fri 09/20/19 10:04:29 [INFO] [CAM_HW]: (hubble_system.c:72) "/usr/local/bin/m2m host DLIJPITDVSQ2H1R59BJR 103.195.5.108 525eac96df2b42f397cd41b681252414 2 &" re0
+Fri 09/20/19 10:04:29 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 2 reg: 4
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (http_parser_request.c:265) error=200,input="NULL",output="", 1568973870
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:1019) nxcHubbleMQTTbroker: response ({"status":200,"message":"Success","data":{"mqtt_uri":"ssl://production-0e9326d)
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:1038) MQTT's URL response :{"status":200,"message":"Success","data":{"mqtt_uri":"ssl://production-0e9326d72fb55036d 
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:345) Got MQTTS server: production-0e9326d72fb55036d-mqtt.hubble.in
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:348) Got MQTTS port: 8883
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:828) Write new MQTT Server 'ssl://production-0e9326d72fb55036d-mqtt.hubble.in:8883' to NVCONF
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:846) ===Init MQTTs===
+Fri 09/20/19 10:04:30 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=get_mac_address
+Fri 09/20/19 10:04:30 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Fri 09/20/19 10:04:30 [INFO] [HTTP]: (network_callback.c:113) get MAC address
+Fri 09/20/19 10:04:30 [INFO] [HTTP]: (cmd_nwk.c:592) cmd_get_mac_address, value=000AE22FFFD5, ret=0
+Fri 09/20/19 10:04:30 [INFO] [HTTP]: (http_server.c:304) HTTP response: (9) get_mac_address: 000AE22FFFD5
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (pcwrapper.c:182) mac=000AE22FFFD5,  response=get_mac_address: 000AE22FFFD5
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (pcwrapper.c:134) g_udid=010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (pcwrapper.c:134) g_udid=010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:867) set all MQTTS items
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:868) topic_sub: /v1/devices/010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:869) topic_pub: /v1/server/devices/010335000AE22FFFD5BPJGSAGE
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (main.c:882) Init MQTT to server: production-0e9326d72fb55036d-mqtt.hubble.in:8883
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (mqtts.c:1105) client id: 000AE22FFFD5
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (mqtts.c:1107) MQTT start init, connecting to production-0e9326d72fb55036d-mqtt.hubble.in:8883
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (MQTTTransportSSL.c:367) Loading the CA root certificate ...
+Fri 09/20/19 10:04:30 [INFO] [MQTT]: (MQTTTransportSSL.c:386) Loading the client cert. and key ...
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:415) Load certs and parse successfully
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:424) Connecting to tcp/production-0e9326d72fb55036d-mqtt.hubble.in/8883...
+Fri 09/20/19 10:04:31 [INFO] [CAM_MEDIA]: (cv2055spi_main.c:786) 1.CV2055 streaming is OFF!!
+Fri 09/20/19 10:04:31 [ERROR] [CAM_MEDIA]: (cv2055spi_main.c:789) unlink fail. use backup method to remove pu_streaming flag
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:472) Setting up the SSL/TLS structure...
+WAIT LED_EVENT===
+SessionID = DLIJPITDVSQ2H1R59BJR Success
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:550) Performing the SSL/TLS handshake...
+Fri 09/20/19 10:04:31 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:195) led_event
+Fri 09/20/19 10:04:31 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:167) led_set_event, led event = 11
+Fri 09/20/19 10:04:31 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_PU_OFF_NETWORK_SUCCESS===
+Fri 09/20/19 10:04:31 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_PU_OFF_NETWORK_SUCCESS====
+Fri 09/20/19 10:04:31 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=4,   new_event=LED_E_PU_OFF_NETWORK_SUCCESS
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:97)   This certificate has no flags
+Fri 09/20/19 10:04:31 [INFO] [MQTT]: (MQTTTransportSSL.c:97)   This certificate has no flags
+Fri 09/20/19 10:04:32 [INFO] [MQTT]: (MQTTTransportSSL.c:593) handshake time 1177873 us
+Fri 09/20/19 10:04:32 [INFO] [MQTT]: (MQTTTransportSSL.c:604) Ciphersuite: 'TLS-RSA-WITH-AES-128-CBC-SHA256'
+Fri 09/20/19 10:04:32 [INFO] [MQTT]: (mqtts.c:1161)  Connecting to production-0e9326d72fb55036d-mqtt.hubble.in 8883
+Fri 09/20/19 10:04:32 [INFO] [MQTT]: (MQTTClient.c:486) sendPacket MQTTConnect
+Fri 09/20/19 10:04:32 [INFO] [MQTT]: (MQTTClient.c:456) Waitfor CONNACK packet
+Fri 09/20/19 10:04:32 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 0 reg: 7
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:1203) Connected 0
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:1205) mqtt Init done
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:694) topic: '/v1/devices/010335000AE22FFFD5BPJGSAGE'
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:695) mqtt_enable :'1'
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:696) mqtt_continue: '1'
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:697) count_sub_topic: '0'
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (MQTTClient.c:524) sendPacket MQTTSubscribe
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (MQTTClient.c:456) Waitfor SUBACK packet
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (MQTTClient.c:538) grantedQoS 1
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:727) Subcribe to topic: /v1/devices/010335000AE22FFFD5BPJGSAGE, 0
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (main.c:958) ===MQTT Client Running===
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (main.c:961) __Seconds since system boot up 41__
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:583) mqtt_control: MQTTS_CMD_START
+Fri 09/20/19 10:04:33 [INFO] [MQTT]: (mqtts.c:1372) There are 10 commands in multiple commands support list
+ntpd: setting clock to Fri Sep 20 17:04:36 GMT-7 2019 (offset 1.656085s)
+NTP with 'ntp.hubble.in' OK!!!
+NTP with 'ntp.hubble.in' OK!!!
+Fri 09/20/19 10:04:37 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 0 reg: 9
+Fri 09/20/19 10:04:40 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 0 reg: 11
+Fri 09/20/19 10:04:43 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 28.06
+Fri 09/20/19 10:04:43 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 255 reg: 14
+Fri 09/20/19 10:04:46 [INFO] [CAM_MEDIA]: (cv2055spi_api.c:860) Send new status 94 reg: 0
+Fri 09/20/19 10:04:55 [DEBUG] [CAM_MEDIA]: (motiondtc_engine.c:1782) Not support state (5)
+Fri 09/20/19 10:05:00 [INFO] [OTA_SERVER]: (main.c:781) Sleep for 30s
+Fri 09/20/19 10:05:00 [INFO] [OTA_SERVER]: (main.c:785) Camera doesn't stream Mobile app or PU. Start to check OTA!
+Fri 09/20/19 10:05:00 [INFO] [OTA_SERVER]: (main.c:653) Downloading log info ota.hubble.in/ota1/0335_patch/analytic_log_03.30.26.info
+Fri 09/20/19 10:05:01 [DEBUG] [CAM_MEDIA]: (motiondtc_engine.c:1782) Not support state (5)
+Fri 09/20/19 10:05:02 [INFO] [OTA_SERVER]: (hubble_server_api.c:225) Check for network connection at src/download.c, Function: download_file, Line: 132
+Fri 09/20/19 10:05:02 [ERROR] [OTA_SERVER]: (ping.c:210) Gethostbyname failed
+Fri 09/20/19 10:05:02 [INFO] [OTA_SERVER]: (hubble_server_api.c:231) SUCCESS Ping to server: google.com
+Fri 09/20/19 10:05:02 [INFO] [OTA_SERVER]: (download.c:153) Error 22 : Error
+Fri 09/20/19 10:05:02 [INFO] [OTA_SERVER]: (hubble_server_api.c:225) Check for network connection at src/main.c, Function: checkout_analytic_version, Line: 657
+Run NTP apps with list of server
+ntpd -n -q -p ntp.hubble.in
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (hubble_server_api.c:231) SUCCESS Ping to server: ping.hubble.in
+Fri 09/20/19 10:05:03 [ERROR] [OTA_SERVER]: (main.c:790) Something wrong with configuration update
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (main.c:387) Upgrade Package avail
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (hubble_status.c:84) hubble_signal: Signal type (1500) - value (5)
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (main.c:853) Got signal after camera boot up done. Start to check OTA!
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (main.c:387) Upgrade Package avail
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (hubble_status.c:84) hubble_signal: Signal type (1500) - value (5)
+Fri 09/20/19 10:05:03 [INFO] [OTA_SERVER]: (main.c:874) OTA UPGRADE EXIT
+NTP with 'ntp.hubble.in' OK!!!
+Fri 09/20/19 10:05:13 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 28.06
+Fri 09/20/19 10:05:14 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Fri 09/20/19 10:05:14 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+[ 9-20 17:05:23 ]host process is allive
+
