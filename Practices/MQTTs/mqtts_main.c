@@ -5,3 +5,6 @@ Download MQTT:https://github.com/eclipse/paho.mqtt.embedded-c
 Download mbedtls: https://tls.mbed.org/download
 */
 
+int main(void){
+	ret 0;
+}
