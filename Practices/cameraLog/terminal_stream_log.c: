@@ -1,0 +1,121 @@
+===> GET CONNECTING ==> ONLINE
+~ # Tue 09/24/19 08:53:52 [INFO] [MQTT]: (mqtts.c:820) Message: action=command&command=value_temperature
+Tue 09/24/19 08:53:52 [INFO] [MQTT]: (MQTTClient.c:364) sendPacket PUBACK to server
+Tue 09/24/19 08:53:52 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=value_temperature
+Tue 09/24/19 08:53:52 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Tue 09/24/19 08:53:53 [INFO] [CAM_HW]: (cam_temperature.c:353) run cam_get_temperature: 25.54
+Tue 09/24/19 08:53:53 [INFO] [HTTP]: (temperature_callback.c:68) get temperature value : 255, ret=0
+Tue 09/24/19 08:53:53 [INFO] [HTTP]: (cmd_tdt.c:108) cmd_get_temperature, value=255, ret=0
+Tue 09/24/19 08:53:53 [INFO] [HTTP]: (http_server.c:304) HTTP response: (108) value_temperature: 25.5
+Tue 09/24/19 08:53:53 [INFO] [MQTT]: (mqtts.c:257) CURL_MULTI: All transfer is done , Checking for success status
+Tue 09/24/19 08:53:53 [INFO] [MQTT]: (mqtts.c:1052) [Index: 1]Reponse: value_temperature: 25.5 -> Command: action=command&command=value_temperature | Status: 5
+Tue 09/24/19 08:53:53 [INFO] [MQTT]: (main.c:174) mqtts_publish_1 topic: /v1/server/devices/010335000AE22FFFD5BPJGSAGE, len: 102
+Tue 09/24/19 08:53:53 [INFO] [MQTT]: (MQTTClient.c:456) Waitfor PUBACK packet
+Tue 09/24/19 08:53:53 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 25.54
+Tue 09/24/19 08:53:53 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:53:54 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+tunnel info:
+time  9-24 15:53:55 
+  m_strP2PClientID= DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#053_p2pclient, 
+ m_strP2PServerID= DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#053 
+ m_nP2PType= 1 
+ peer IP address=192.168.13.213:55343
+,[ 9-24 15:53:55 ]host process is allive
+Tue 09/24/19 08:54:01 [DEBUG] [CAM_MEDIA]: (motiondtc_engine.c:1782) Not support state (5)
+[AB]So Soon
+Tue 09/24/19 08:54:23 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 25.54
+Tue 09/24/19 08:54:34 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:54:38 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+Tue 09/24/19 08:54:53 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 25.17
+[OnReceiveMessage] 3, Client DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#053_p2pclient disconnect to Host DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#053
+[ 9-24 15:54:55 ]host process is allive
+Tue 09/24/19 08:55:01 [DEBUG] [CAM_MEDIA]: (motiondtc_engine.c:1782) Not support state (5)
+Run NTP apps with list of server
+ntpd -n -q -p ntp.hubble.in
+Tue 09/24/19 08:55:18 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:55:18 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+
+~ # Tue 09/24/19 08:55:23 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 25.17
+
+~ # 
+~ # 
+~ # tunnel info:
+time  9-24 15:55:36 
+  m_strP2PClientID= DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#189_p2pclient, 
+ m_strP2PServerID= DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#189 
+ m_nP2PType= 1 
+ peer IP address=192.168.13.213:55082
+,Tue 09/24/19 08:55:43 [INFO] [CAM_HW]: (hw_temperature.c:210) Temperature offset: -24 with [SW Compensation: -24 Factory: 0 ]
+NTP with 'ntp.hubble.in' OK!!!
+
+
+===>>>>> OPEN APP STREAMMING++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Tue 09/24/19 08:55:54 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 24.57
+[ 9-24 15:55:55 ]host process is allive
+Tue 09/24/19 08:55:59 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:56:01 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:331> handle_DESCRIBE enter uri:rtsp://127.0.0.1:10103/blinkhd->loc: 0x18dcc0
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:342> session found :0x18fee8
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <live.c:199> live_teardown remaining:0 
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:331> handle_DESCRIBE enter uri:rtsp://127.0.0.1:10103/blinkhd->loc: 0x18dcc0
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:342> session found :0x18fee8
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <live.c:199> live_teardown remaining:0 
+Tue 09/24/19 08:56:01 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:178> rtsp_new_session() ALLOCATE sesstion 44 bytes
+Tue 09/24/19 08:56:01 [DEBUG] [CAM_MEDIA]: (motiondtc_engine.c:1782) Not support state (5)
+WAIT LED_EVENT===
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <stream.c:253> stream_set_waiting Track "compressed-h2640" dest->waiting:0 waiting:1
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp_video_data.c:50> Enable h264 encode pipe resource
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <stream.c:253> stream_set_waiting Track "alaw" dest->waiting:0 waiting:1
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp_audio_data.c:103> set_running enter running is :1 
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:728> rtsp_increase_nb_ext_clients  1
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:426) RTSP Count = 1
+Tue 09/24/19 08:56:02 [INFO] [CAM_MEDIA]: (cam_media_manage.c:383) Status streamming= 1
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:195) led_event
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:167) led_set_event, led event = 11
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_PU_OFF_NETWORK_SUCCESS===
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_PU_OFF_NETWORK_SUCCESS====
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:195) led_event
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:167) led_set_event, led event = 8
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_APP_REQUEST_ON===
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=4,   new_event=LED_E_PU_OFF_NETWORK_SUCCESS
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_APP_REQUEST_ON====
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=4,   new_event=LED_E_APP_REQUEST_ON
+Tue 09/24/19 08:56:02 [INFO] [CAM_HW]: (cam_led_sm.c:354) ==========APP_STREAMMING========
+[AB]So Soon
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (mqtts.c:820) Message: action=command&command=value_temperature
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (MQTTClient.c:364) sendPacket PUBACK to server
+Tue 09/24/19 08:56:04 [INFO] [HTTP]: (http_server.c:278) Receive action=command&command=value_temperature
+Tue 09/24/19 08:56:04 [INFO] [HTTP]: (http_server.c:289) CVHttpParseRequestHandle
+Tue 09/24/19 08:56:04 [INFO] [CAM_HW]: (cam_temperature.c:353) run cam_get_temperature: 24.57
+Tue 09/24/19 08:56:04 [INFO] [HTTP]: (temperature_callback.c:68) get temperature value : 245, ret=0
+Tue 09/24/19 08:56:04 [INFO] [HTTP]: (cmd_tdt.c:108) cmd_get_temperature, value=245, ret=0
+Tue 09/24/19 08:56:04 [INFO] [HTTP]: (http_server.c:304) HTTP response: (45) value_temperature: 24.5
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (mqtts.c:257) CURL_MULTI: All transfer is done , Checking for success status
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (mqtts.c:1052) [Index: 1]Reponse: value_temperature: 24.5 -> Command: action=command&command=value_temperature | Status: 5
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (main.c:174) mqtts_publish_1 topic: /v1/server/devices/010335000AE22FFFD5BPJGSAGE, len: 102
+Tue 09/24/19 08:56:04 [INFO] [MQTT]: (MQTTClient.c:456) Waitfor PUBACK packet
+Tue 09/24/19 08:56:24 [INFO] [CAM_HW]: (cam_temperature.c:203) get_temperature in app layer: 24.57
+[OnReceiveMessage] 3, Client DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#189_p2pclient disconnect to Host DLIJPITDVSQ2H1R59BJR_ctok_ZEIYCODY-UXJD-XBHV-LAQQ-HLJVAHYIWHUU#189
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <tcp.c:382> closing TCP connection to client due to read error: Connection reset by peer
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <stream.c:253> stream_set_waiting Track "compressed-h2640" dest->waiting:1 waiting:0
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp_video_data.c:52> Disable h264 encode pipe resource
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <live.c:199> live_teardown remaining:1 
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <stream.c:253> stream_set_waiting Track "alaw" dest->waiting:1 waiting:0
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp_audio_data.c:103> set_running enter running is :0 
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <live.c:199> live_teardown remaining:0 
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:403) <rtsp.c:738> rtsp_decrease_nb_ext_clients  0
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (hw_api_multimedia.c:426) RTSP Count = 0
+Tue 09/24/19 08:56:29 [INFO] [CAM_MEDIA]: (cam_media_manage.c:383) Status streamming= 0
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:195) led_event
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_hw_manage_dbus_service.c:167) led_set_event, led event = 7
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_led_sm.c:233) event: LED_E_APP_REQUEST_OFF===
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_led_sm.c:214) get event : LED_E_APP_REQUEST_OFF====
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_led_sm.c:625) current_state=5,   new_event=LED_E_APP_REQUEST_OFF
+Tue 09/24/19 08:56:29 [INFO] [CAM_HW]: (cam_led_sm.c:332) ========CONNECTED_SERVER========
+WAIT LED_EVENT===
+Tue 09/24/19 08:56:41 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:56:46 [ERROR] [MQTT]: (MQTTClient.c:280) Couldn't receive Ping Response, Proceed to Force Ping
+Tue 09/24/19 08:56:46 [INFO] [MQTT]: (MQTTClient.c:245) Sending keepAlive packet
+Tue 09/24/19 08:56:46 [INFO] [MQTT]: (MQTTClient.c:256) Force Ping, retries = 1
+Tue 09/24/19 08:56:49 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!
+Tue 09/24/19 08:56:50 [INFO] [MQTT]: (MQTTClient.c:404) Received PING RESP!!!

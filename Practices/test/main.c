@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+extern char *server_root_cert;
+
 int read_file_by_line(char *path, char *buff, int line_num, int size){
 	int ret = 0;
 	FILE *fp;
@@ -39,6 +41,7 @@ int main()
 {
     char buff[12];
     printf("Hello World\n");
+    printf("%s", server_root_cert);
     read_file_by_line("/home/anhpt/Desktop/string.txt", buff, 1, sizeof(buff));
     printf("%s", buff);
 
