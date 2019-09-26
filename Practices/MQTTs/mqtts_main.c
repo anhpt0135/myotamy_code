@@ -6,5 +6,5 @@ Download mbedtls: https://tls.mbed.org/download
 */
 
 int main(void){
-	ret 0;
+	return 0;
 }

@@ -15,8 +15,8 @@
  *   Ian Craggs - fix for #96 - check rem_len in readPacket
  *   Ian Craggs - add ability to set message handler separately #6
  *******************************************************************************/
+#include "MQTTLinux.h"
 #include "MQTTClient.h"
-
 #include <stdio.h>
 #include <string.h>
 
