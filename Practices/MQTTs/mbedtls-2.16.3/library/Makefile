@@ -11,7 +11,6 @@ LOCAL_LDFLAGS =
 ifdef DEBUG
 LOCAL_CFLAGS += -g3
 endif
-
 # MicroBlaze specific options:
 # CFLAGS += -mno-xl-soft-mul -mxl-barrel-shift
 
