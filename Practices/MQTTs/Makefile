@@ -6,10 +6,11 @@ src+=$(wildcard ./paho.mqtt.embedded-c/MQTTPacket/src/*.c)
 
 obj=$(src:.c=.o)
 
-target=ouput
+target=output
 
 CFLAGS=-g -Wall -Werror -I. -I./paho.mqtt.embedded-c/MQTTClient-C/src/ -I./paho.mqtt.embedded-c/MQTTPacket/src/ 
 #CFLAGS+=-I./paho.mqtt.embedded-c/MQTTClient-C/src/linux/ 
+CFLAGS+=-I./mbedtls-2.16.3/include/mbedtls
 CFLAGS+=-I./mbedtls-2.16.3/include
 
 LDFLAGS=-L./mbedtls-2.16.3/library -lmbedtls -lmbedcrypto -lmbedx509
@@ -18,7 +19,7 @@ $(target):$(obj)
 	$(CC) $(CFLAGS) $(obj) -o $(target) $(LDFLAGS)
 	
 mbedtls:
-	CC=gcc $(MAKE) -C mbedtls-2.16.3/library
+	CC=gcc SHARED=yes $(MAKE) -C mbedtls-2.16.3/library
 
 clean:
 	rm -rf *.o $(target) ./paho.mqtt.embedded-c/MQTTClient-C/src/*.o

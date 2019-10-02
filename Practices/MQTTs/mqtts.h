@@ -25,33 +25,58 @@
 #include "mbedtls/debug.h"
 #include "mbedtls/certs.h"
 
-typedef struct Timer{
+#define WEBSOCKET_CONTINUATION 0x00
+#define WEBSOCKET_TEXT 0x01
+#define WEBSOCKET_BINARY 0x02
+#define WEBSOCKET_CONNCLOSE 0x08
+#define WEBSOCKET_PING 0x09
+#define WEBSOCKET_PONG 0x0A
+
+#define MBEDTLS_WEBSOCKET_SEND_BUF_LEN       1024
+#define MBEDTLS_WEBSOCKET_RECV_BUF_LEN       1024
+#define MBEDTLS_MQTT_RECV_BUF_LEN            1024
+//#define MBEDTLS_MQTT_DEBUG
+
+typedef struct Timer
+{
 	struct timeval end_time;
 } Timer;
 
-void TimerInit(Timer *);
-char TimerIsExpired(Timer *);
-void TimerCountdownMS(Timer *, unsigned int);
-void TimerCountdown(Timer *, unsigned int);
-int TimerLeftMS(Timer *);
+void TimerInit(Timer*);
+char TimerIsExpired(Timer*);
+void TimerCountdownMS(Timer*, unsigned int);
+void TimerCountdown(Timer*, unsigned int);
+int TimerLeftMS(Timer*);
 
-typedef struct Network{
-	int my_socket;
-	mbedtls_net_context server_fd;
-	mbedtls_entropy_context entropy;
-	mbedtls_ctr_drbg_context ctr_drbg;
+typedef struct Network
+{
 	mbedtls_ssl_context ssl;
-	mbedtls_ssl_config conf;
-	mbedtls_x509_crt cacert;
-	int (*mqttread)(struct Network*, unsigned char*, int, int);
-	int (*mqttwrite)(struct Network*, unsigned char*, int, int);
-}Network;
+    mbedtls_net_context server_fd;
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+    mbedtls_x509_crt cacert;
+    mbedtls_ssl_config conf;
 
-int mqtts_read(Network*, unsigned char*, int, int);
-int mqtts_write(Network*, unsigned char*, int, int);
+    unsigned char ws_sendbuf[MBEDTLS_WEBSOCKET_SEND_BUF_LEN];
+    unsigned char ws_recvbuf[MBEDTLS_WEBSOCKET_RECV_BUF_LEN];
+    unsigned char mqtt_recvbuf[MBEDTLS_MQTT_RECV_BUF_LEN];
+    int ws_recv_offset;
+    int ws_recv_len;
+    int mqtt_recv_offset;
+    int mqtt_recv_len;
+    uint8_t websocket;
 
-void Tls_sessionInit(Network* n);
-int NetworkConnect(Network* n, char* addr, char* port);
+	int (*mqttread) (struct Network*, unsigned char*, int, int);
+	int (*mqttwrite) (struct Network*, unsigned char*, int, int);
+} Network;
+
+int mqtt_mbedtls_read(Network*, unsigned char*, int, int);
+int mqtt_mbedtls_write(Network*, unsigned char*, int, int);
+
+void NetworkInit(Network*);
+int NetworkConnect(Network*, char*, int);
 void NetworkDisconnect(Network*);
+int NetworkSub(Network*);
+int NetworkYield(Network*);
 
 #endif
