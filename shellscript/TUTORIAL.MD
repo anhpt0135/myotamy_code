@@ -38,3 +38,16 @@ echo $@
 #argc:
 echo $#
 
+
+
+NOTE: http header:
+
+#define HTTP_MSG_RESPONSE_FORMAT    "HTTP/1.1 %d %s\r\n" \
+                                "Content-type: %s\r\n" \
+                                "Connection: Keep-Alive\r\n"\
+                                "Content-Length: %d\r\n\r\n" /**< Define HTTP message respone format. */
+#define HTTP_FILE_RESPONSE_FORMAT    "HTTP/1.1 %d %s\r\n"\
+                                "Content-type: %s\r\n"\
+                                STD_HEADER \
+                                "Content-Disposition: filename=\"%s\"\r\n" \
+                                "Content-Length: %d\r\n\r\n" /**< Define HTTP file respone format. */
