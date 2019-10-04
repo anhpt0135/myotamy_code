@@ -80,6 +80,10 @@ int main(int argc, char const *argv[])
    		char buf[500];
    		sprintf(buf, header, len, ctime(&timer), content);
         read( new_socket , buffer, 30000);
+        //if(cmd_parse(buffer, buf) != 0){
+        //	printf("Unsupported command");
+        //	return -1;
+        //}
         printf("%s\n",buffer );
         write(new_socket , buf , strlen(buf));
         printf("------------------Hello message sent-------------------");

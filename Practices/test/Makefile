@@ -3,7 +3,7 @@ src=$(wildcard *.c)
 obj=$(src:.c=.o)
 target=output
 
-CFLAGS=-Wall -g
+CFLAGS=-Wall -Werror -g -I.
 
 $(target):$(obj)
 	$(CC) $(CFLAGS) -o $(target) $^

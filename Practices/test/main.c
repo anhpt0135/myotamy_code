@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include "parse.h"
 
 extern char *server_root_cert;
 
-int read_file_by_line(char *path, char *buff, int line_num, int size){
+/*int read_file_by_line(char *path, char *buff, int line_num, int size){
 	int ret = 0;
 	FILE *fp;
 	fp = fopen(path, "r");
@@ -35,15 +36,17 @@ int read_file_by_line(char *path, char *buff, int line_num, int size){
 			line++;
 	}
 	return ret;
-}
+}*/
 
 int main()
 {
     char buff[12];
     printf("Hello World\n");
     printf("%s", server_root_cert);
-    read_file_by_line("/home/anhpt/Desktop/string.txt", buff, 1, sizeof(buff));
-    printf("%s", buff);
+    //read_file_by_line("/home/anhpt/Desktop/string.txt", buff, 1, sizeof(buff));
+    printf("%s\n", buff);
+    fn_lookup("USER");
+    fn_lookup("PASS");
 
     return 0;
 }

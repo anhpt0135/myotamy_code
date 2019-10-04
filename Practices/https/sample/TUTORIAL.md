@@ -290,3 +290,6 @@ mbedtls_ssl_conf_ca_chain( &conf, &cacert, NULL );
 // mbedtls_ssl_conf_authmode( &conf, MBEDTLS_SSL_VERIFY_NONE );
 ##Conclusion
 After changing SERVER_PORT to 443, compiling this application and linking it to the mbed TLS library, we now have an application that can talk basic HTTPS to a web server. The final code is available as ssl_client1.c in the source code of the library or as ssl_client1.c on github.
+
+
+##
