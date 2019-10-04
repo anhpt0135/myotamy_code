@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <time.h>
 
 #define PORT 12121
 int main(int argc, char const *argv[])
@@ -21,17 +22,15 @@ int main(int argc, char const *argv[])
     int server_fd, new_socket; ;
     struct sockaddr_in address;
     int addrlen = sizeof(address);
+    time_t timer;
     
     // Only this line has been changed. Everything is same.
     char *header = "HTTP/1.1 200 OK\n"				\
     			  "Content-Type: text/plain\n"		\
     			  "Content-Length: %d\n\n"			\
-    			  "%s";
+    			  "%s\n%s";
     
     char *content = "Welcome to the server page! \n\n HAVE A NICE DAY!!!!";
-    int len = strlen(content);
-   	char buf[500];
-   	sprintf(buf, header, len, content);
 
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
@@ -74,6 +73,12 @@ int main(int argc, char const *argv[])
         }
         
         char buffer[30000] = {0};
+        time(&timer);
+        char buftime[200];
+        sprintf(buftime, "%s", ctime(&timer));
+        int len = strlen(content) + strlen(buftime);
+   		char buf[500];
+   		sprintf(buf, header, len, ctime(&timer), content);
         read( new_socket , buffer, 30000);
         printf("%s\n",buffer );
         write(new_socket , buf , strlen(buf));
