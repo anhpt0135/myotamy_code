@@ -17,12 +17,25 @@
 #include <time.h>
 
 #define PORT 12121
+#define FILE_MEM_INFO "/proc/meminfo"
+#define FILE_CPU_STATE "/proc/stat"
+
+void format_time(char *output){
+    time_t rawtime;
+    struct tm * timeinfo;
+
+    time ( &rawtime );
+    timeinfo = localtime ( &rawtime );
+
+    sprintf(output, "[%d %d %d %d:%d:%d]",timeinfo->tm_mday, timeinfo->tm_mon + 1, timeinfo->tm_year + 1900, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec);
+}
+
 int main(int argc, char const *argv[])
 {
     int server_fd, new_socket; ;
     struct sockaddr_in address;
     int addrlen = sizeof(address);
-    time_t timer;
+    FILE *ptrfile;
     
     // Only this line has been changed. Everything is same.
     char *header = "HTTP/1.1 200 OK\n"				\
@@ -30,7 +43,6 @@ int main(int argc, char const *argv[])
     			  "Content-Length: %d\n\n"			\
     			  "%s\n%s";
     
-    char *content = "Welcome to the server page! \n\n HAVE A NICE DAY!!!!";
 
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
@@ -64,22 +76,27 @@ int main(int argc, char const *argv[])
     }
     
     while(1)
-    {
+    {	
+    	char content[140]; //= "Welcome to the server page! \n\n HAVE A NICE DAY!!!!";
         printf("\n+++++++ Waiting for new connection ++++++++\n\n");
+        ptrfile = fopen(FILE_MEM_INFO, "r");
+        fread(content, sizeof(char), 140, ptrfile);
+        fclose(ptrfile);
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen))<0)
         {
             perror("In accept");
             exit(EXIT_FAILURE);
         }
         
-        char buffer[30000] = {0};
-        time(&timer);
+        char buffer[500] = {0};
+        //time(&timer);
         char buftime[200];
-        sprintf(buftime, "%s", ctime(&timer));
+        //sprintf(buftime, "%s", format_time(timer));
+        format_time(buftime);
         int len = strlen(content) + strlen(buftime);
-   		char buf[500];
-   		sprintf(buf, header, len, ctime(&timer), content);
-        read( new_socket , buffer, 30000);
+   		char buf[2000];
+   		sprintf(buf, header, len, buftime, content);
+        read( new_socket , buffer, 500);
         //if(cmd_parse(buffer, buf) != 0){
         //	printf("Unsupported command");
         //	return -1;
