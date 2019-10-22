@@ -61,10 +61,10 @@ echo '$a'        | $a          | variables are not expanded inside ''
 ROM trong qua trinh san xuat chip nay. Khong the thay doi no.
 ==> Nhiem vu cua ROM Boot Loader la de khoi chay stage boot loader thu 2 la SPL/MLO
 
-2. SPL/MLO (Second Program Loader/Memory Loader): duoc luu trong internal SRAM, ==> de load va thi hanh stage boot loader thu 3 
+2. SPL/MLO (Secondary Program Loader/Memory Loader): duoc luu trong internal SRAM, ==> de load va thi hanh stage boot loader thu 3 
 la U-boot.
 
-3.U-boot: duoc dung de load va run the Linux Kernel (from DDR memory of the board)
+3.U-boot(from DDR memory of the board): duoc dung de load va run the Linux Kernel 
 
 4. Linux Kernel: ==> in DDR memory of the board
 
