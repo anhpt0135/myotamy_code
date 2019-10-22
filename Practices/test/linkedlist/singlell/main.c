@@ -97,6 +97,9 @@ void delete(){
 	printf("3.Delete at the beginning list\n");
 	printf("4.Delete at the end of the list\n");
 	scanf("%d", &op);
+	switch(op){
+		case 
+	}
 }
 void display(){
 	printf("*************display func***************\n");
