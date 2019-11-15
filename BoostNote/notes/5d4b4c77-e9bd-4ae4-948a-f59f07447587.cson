@@ -1,10 +1,60 @@
 createdAt: "2019-11-15T02:49:05.607Z"
-updatedAt: "2019-11-15T02:49:05.607Z"
+updatedAt: "2019-11-15T03:44:26.865Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
-title: ""
+title: "Programming Note"
 tags: []
-content: ""
+content: '''
+  # Programming Note
+  ### 1. Split function in Java
+  String [ ] split ( String regex, int **limit** )
+  . limit < 0: return an array of any size
+  . limit > 0: return an array with size of limit - 1
+  . limit = 0: the same to the first case, but the trailing empty strings will be discarded.
+  
+  #### limit < 0
+  ```java
+  public class Main
+  {
+  	public static void main(String[] args) {
+  		System.out.println("Hello World");
+  		String str = "~/Desktop/TEST/0945/0945-03.20.84.rc00/file.c"; 
+          String[] arrOfStr = str.split("/", -2); 
+          System.out.println(str);
+          for (String a : arrOfStr) 
+              System.out.println(a);
+  	}
+  }
+  ```
+  ##### Output:
+  Hello World                                                              
+  ~/Desktop/TEST/0945/0945-03.20.84.rc00/file.c
+  ~
+  Desktop                          
+  TEST                        
+  0945                         
+  0945-03.20.84.rc00          
+  file.c  
+  
+  #### limit > 0
+  ```java
+  public class Main
+  {
+  	public static void main(String[] args) {
+  		String str = "~/Desktop/TEST/0945/0945-03.20.84.rc00/file.c"; 
+          String[] arrOfStr = str.split("/", 3); 
+          for (String a : arrOfStr) 
+              System.out.println(a);
+  	}
+  }
+  ```
+  ##### Output:
+  ~
+  Desktop
+  TEST/0945/0945-03.20.84.rc00/file.c
+  
+  
+'''
 linesHighlighted: []
 isStarred: false
 isTrashed: false
