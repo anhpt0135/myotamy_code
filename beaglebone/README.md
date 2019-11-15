@@ -61,14 +61,45 @@ echo '$a'        | $a          | variables are not expanded inside ''
 ROM trong qua trinh san xuat chip nay. Khong the thay doi no.
 ==> Nhiem vu cua ROM Boot Loader la de khoi chay stage boot loader thu 2 la SPL/MLO
 
-2. SPL/MLO (Secondary Program Loader/Memory Loader): duoc luu trong internal SRAM, ==> de load va thi hanh stage boot loader thu 3 
+2. SPL/MLO (Secondary Program Loader/Memory Loader): duoc dua vao internal SRAM, ==> de load va thi hanh stage boot loader thu 3 
 la U-boot.
 
-3.U-boot(from DDR memory of the board): duoc dung de load va run the Linux Kernel 
+3.U-boot(duoc load vao DDR memory of the board): duoc dung de load va run the Linux Kernel 
 
-4. Linux Kernel: ==> in DDR memory of the board
+4. Linux Kernel: ==> duoc load vao DDR memory of the board de sau do mount RFS into RAM.
 
 5. RFS(Root FIle System): trong SD/Flash/Network/RAM/e-MMC
 
 ==> De boot Linux thanh cong thi ta can it nhat tu 1-5 thanh phan o phia tren.
+
+===> Dung busy-box de tao ra your own root file system (RFS)
+
+
+###20: Booting RBL and MLO on BBB
+
+RBL copies MLO tu external memory device (MMC card, USB, NAND, ...) vao internal SRAM cua AM3359.
+De thuc hien viec boot thi micro SD card can phan vung 2 partitions:
+partition 1 o dinh dang FAT chua boot: MLO, U-boot
+partition 2 o dinh dang ext3/ext4 (la dinh dang file systems mac dinh cua LINUX tieng anh goi la linux native file systems) chua va linux-kernel image (uImage) va RFS
+
+Cong viec cua U-boot la khoi tao peripherals va sau do load Kernel vao DDRAM.
+
+###24: Decoding U-boot header of uImage Manually
+MMC0 interface ==> microSD card
+MMC1 interface ==> e-MMC
+
+U-boot command:
+de load a file from FAT based file system in to memory use : fatload
+de load a file from any file system : load
+
+example:
+fatload usb 0:2 0x82000000 uImage
+fatload mmc 0:2 0x88000000 initramfs
+load mmc 0:2 0x88000000 uImage
+
+
+####Section 12: U-boot (bao gom SPL/MLO, U-boot image)
+
+1. Download U-boot:
+git clone -b sunxi https://github.com/linux-sunxi/u-boot-sunxi.git
 
