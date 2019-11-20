@@ -1,5 +1,5 @@
 createdAt: "2019-11-15T02:49:05.607Z"
-updatedAt: "2019-11-15T03:44:26.865Z"
+updatedAt: "2019-11-15T05:13:25.348Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Programming Note"
@@ -27,14 +27,14 @@ content: '''
   }
   ```
   ##### Output:
-  Hello World                                                              
+  >Hello World                                                              
   ~/Desktop/TEST/0945/0945-03.20.84.rc00/file.c
   ~
   Desktop                          
   TEST                        
   0945                         
   0945-03.20.84.rc00          
-  file.c  
+  >file.c  
   
   #### limit > 0
   ```java
@@ -49,10 +49,12 @@ content: '''
   }
   ```
   ##### Output:
-  ~
+  >~
   Desktop
   TEST/0945/0945-03.20.84.rc00/file.c
   
+  ### 2. How to delete remote branch in git
+  git push origin --delete auto_93_import_report_for_QA_tool
   
 '''
 linesHighlighted: []

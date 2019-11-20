@@ -1,0 +1,20 @@
+createdAt: "2019-11-20T07:22:57.145Z"
+updatedAt: "2019-11-20T07:28:39.788Z"
+type: "MARKDOWN_NOTE"
+folder: "c59adf556f2f145052fd"
+title: "Linux Programming"
+tags: []
+content: '''
+  # Linux Programming
+  ## Chapter 3: All About Bootloader
+  ### 1.Bootloader dung de lam gi?
+  
+  Bootloader co hai chuc nang: 
+  - *Khoi tao he thong co ban*
+  - *load kernel*
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
