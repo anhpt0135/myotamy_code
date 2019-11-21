@@ -1,5 +1,5 @@
 createdAt: "2019-11-20T07:22:57.145Z"
-updatedAt: "2019-11-20T07:28:39.788Z"
+updatedAt: "2019-11-21T10:08:01.623Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Linux Programming"
@@ -12,6 +12,40 @@ content: '''
   Bootloader co hai chuc nang: 
   - *Khoi tao he thong co ban*
   - *load kernel*
+  Khi cap nguon hoac reset, he thong trong trang thai rat toi thieu (very minimal state). Thong thuong, cac tai nguyen duy nhat hoat dong tai thoi diem ban dau la mot loi CPU don (single CPU core) va bo nho static tren chip. Ket qua la, system boostrap bao gom mot vai doan ma code voi cac pha (phases of code) ma moi pha se dem them he thong vao hoat dong.
+  ### 2. The boot sequence (Qua trinh boot)
+  Reset vector o vi tr 0xFFFFFFFF la vi tri tren cung cua vung nho flash chua mot doan ma lenh (ROM code) nhay den vi tri bat dau cua bootloader code (SPL/MLO).
+  **Phase 1: ROM code**
+  The ROM code co kha nang loading mot doan code nho tu mot vai vi tri duoc lap trinh san vao SRAM nam trong SoC. 
+  Vi du: Trong TI OMAP va Sitara chips ROM code se load mot vai doan cua NAND flash memory, hoac sector(khu vuc) dau tien cua MMC (eMMC chip hoac SD card), hoac tu Ethernet, USB, UART.
+  Hau het embedded SoCs co ROM code hoat dong giong nhau. Trong SOCs, khi ma bo nho SRAM khong du lon de load toan bo bootloader nhu U-boot, do do phai co mot bo loader trung gian goi la SPL/MLO(Second stage Program Loader).
+  
+  ![Image_Title](/home/anhpt/Hubble/myotamy_code/BoostNote/image/phase1.png)
+  
+  **Phase 2: SPL**
+  Nhiem vu cua SPL la cai dat bo dieu khien bo nho (memory controller) va cac phan quan trong khac cua he thong chuan bi cho viec loading third stage program loader (TPL) vao main memory (DRAM).
+  ![Image_Title](/home/anhpt/Hubble/myotamy_code/BoostNote/image/phase2.png)
+  
+  Sau khi ket thuc phase 2, the third stage program loader xuat hien trong DRAM, va the SPL co the nhay den vi tri do.
+  
+  **Phase 3: TPL**
+  Luc nay, toan bo bootloader chang han U-boot hay Barebox. Thong thuong, co mot giao dien command-line cho nguoi dung co the tien hanh load new boot va kernel images vao bo nho flash.
+  ![Image_Title](/home/anhpt/Hubble/myotamy_code/BoostNote/image/phase3.png)
+  
+  Tai thoi diem ket thuc cua Phase 3, kenel nam trong bo nho SDRAM va doi de bat dau chay. Embedded bootloader thuong duoc giai phong khoi bo nho khi kernel dang chay.
+  
+  ### 3. Moving from bootloader to kernel
+  
+  Khi the bootloader truyen viec dieu khien den kernel, no phai truyen mot vai thong tin den kernel bao gom:
+  * Doi voi PowerPC va ARM architectures: mot so duy nhat doi voi mot loai SoC.
+  * Thong tin co ban cua hardware: kich thuoc va vi tri cua bo nho RAM vat ly va toc do CPU clock.
+  * The kernel command line.
+  * tuy chon (co the co hoac khong), vi tri va kich thuoc cua mot device tree binary
+  * tuy chon, vi tri va kich thuoc cua mot initial RAM disk.
+  
+  The kernel command line la mot chuoi ASCII don gian dieu khien bieu hien cua Linux, viec cai dat, vi du, mot thiet bi chua the root filesystem. Thong thuong, root filesytem duoc cung cap nhu mot RAM disk.
+  
+  Viec su dung rong rai cac du lieu nen tang (platform data) khac nhau dong nghia voi viec moi device phai co mot kernel duoc cau hinh va sua doi cho nen tang do.
   
   
 '''
