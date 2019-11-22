@@ -1,5 +1,5 @@
 createdAt: "2019-11-20T07:22:57.145Z"
-updatedAt: "2019-11-21T10:08:01.623Z"
+updatedAt: "2019-11-22T09:45:12.835Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Linux Programming"
@@ -45,7 +45,148 @@ content: '''
   
   The kernel command line la mot chuoi ASCII don gian dieu khien bieu hien cua Linux, viec cai dat, vi du, mot thiet bi chua the root filesystem. Thong thuong, root filesytem duoc cung cap nhu mot RAM disk.
   
-  Viec su dung rong rai cac du lieu nen tang (platform data) khac nhau dong nghia voi viec moi device phai co mot kernel duoc cau hinh va sua doi cho nen tang do.
+  Viec su dung rong rai cac du lieu nen tang (platform data) khac nhau dong nghia voi viec moi device phai co mot kernel duoc cau hinh va sua doi cho nen tang do, tu do device tree duoc ra doi.
+  
+  ### 4. Gioi thieu ve device trees
+  
+  Mot device tree la mot cach linh hoat de dinh nghia cac thanh phan hardware cua mot he thong may tinh. Thong thuong, device tree duoc load boi bootloader va truyen toi kernel.
+  
+  The Linux kernel chua mot so luong lon cac file nguon device tree trong **arch/$ARCH/boot/dts**
+  Cung co mot so luong file nguon device tree trong the U-boot source code trong **arch/ARCH/dts.**
+  **Neu ban co duoc hardware tu mot ben thu 3, the dts file phai duoc gui chod ban cung voi cac source files khac.**
+  
+  The device tree bieu dien mot he thong may tinh nhu mot tap hop cua cac thanh phan lien ket voi nhau trong mot he thong phan cap.
+  
+  The devcice tree bat dau bang mot root node, ki hieu la /, chua cac nodes con bieu dien hardware cua he thong. Moi node co mot ten va chua mot so thuoc tinh theo cu phap *name = "value"*. 
+  
+  Vi du:
+  
+  ```
+  /dts-v1/;
+  /{
+    model = "TI AM335x BeagleBone";
+    compatible = "ti,am33xx";
+    #address-cells = <1>;
+    #size-cells = <1>;
+    cpus {
+      #address-cells = <1>;
+      #size-cells = <0>;
+      cpu@0 {
+        compatible = "arm,cortex-a8";
+        device_type = "cpu";
+        reg = <0>;
+      };
+    };
+    memory@0x80000000{
+      device_type = "memory";
+      reg = <0x80000000 0x20000000>; /*512 MB*/
+    };
+  };
+  ```
+  
+  De hieu hon cua truc cua device tree, tham khao them sach [mastering embedded linux](https://drive.google.com/file/d/1CF_KTuvxOnLIjk-kQNuXqLdzCEkiEXne/view?usp=sharing) trang 48.
+  
+  ### 5.Device tree include files
+  
+  Co ra nhieu diem chung ve hardware giua cac SoCs trong cung mot family va giua cac boards su dung cung mot SoC. Do do, device tree tach nhung phan chung vao include files, thong thuong voi duoi *.dtsi*. Tieu chua Open Firmware (the open firmware standard) dinh nghia /include/ nhu la mot co che duoc su dung nhu trong vi du sau:
+   */include/ "vexpress-v2m.dtsi"*
+   
+   Nhin qua *.dts* files trong kernel, co the thay tu khoa include duoc dung nhu trong C:
+   *#include "am33xx.dtsi"
+    #include "am335x-bone-common.dtsi"*
+  
+  Duoi day la mot vi du trong file am33xx.dtsi:
+  *#include <dt-bindings/gpio/gpio.h>
+   #include <dt-bindings/pinctrl/am33xx.h>*
+   
+  Cuoi cung, dt-bindings/pinctrl/am33xx.h chua C macro thong thuong:
+   
+   *#define PULL_DISABLE (1 << 3)
+    #define INPUT_EN (1 << 5)
+    #define SLEWCTRL_SLOW (1 << 6)
+    #define SLEWCTRL_FAST 0*
+    
+  Tat ca nhung dieu nay duoc giai quyet khi the device tree sources duoc build bang kernel kbuild. Kernel kbuild truoc tien chay chung (device tree sources) bang C pre-processor, khi do cac #include va #define se duoc xu ly thanh cac text don gian phu hop voi the device tree compiler. **=>** The device tree sources co the su dung cac dinh nghia hang so giong nhau voi the kernel code.
+  
+  Khi ta include cac files theo cach tren thi cac nodes duoc phu len tren cac nodes khac de tao thanh mot cay tong hop (composite tree) ma o do lop ngoai se mo rong hoac dieu chinh lai cac lop trong. 
+  Vi du: am33xx.dtsi la file tong quat cho tat cac am33xx SoCs, dinh nghia MMC controller interface dau tien nhu sau:
+  
+  ```
+  mmc1: mmc@48060000 {
+    compatible = "ti, omap4-hsmmc";
+    ti, hwmods = "mmc1";
+    ti, dual-volt;
+    ti, needs-special-reset;
+    ti, needs-special-hs-handling;
+    dmas = <&edma 24 &edma 25>;
+    dma-names = "tx", "rx";
+    interrupts = <64>;
+    interrupt-parent = <&intc>;
+    reg = <0x48060000 0x1000>;
+    status = "disabled";
+  };
+  ```
+  
+  **NOTE:** The status = "disabled" nghia la khong co device driver nao nen rang buoc voi no, va dong thoi no co label mmc1.
+  
+  Trong am335x-bone-common.dtsi duoc included voi BeagleBone va BeagleBone black, mot node giong nhau duoc tham chieu boi phandle cua no.
+  
+  ```
+  &mmc1 {
+    status = "okay";
+    bus-width = <0x4>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&mmc1_pins>;
+    cd-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+    cd-inverted;
+  };
+  ```
+  O day, mmc1 duoc enabled (status = "okay") boi vi ca hai board deu co mot mcc1 device va pinctrl duoc thiet lap. Sau do, trong file am335x-boneblack.dts, se co mot tham chieu khac tro den mmc1 tuong ung voi mot voltage regulator:
+  
+  ```
+  &mmc1 {
+    vmmc-supply = <&vmmcsd_fixed>;
+  };
+  ```
+  
+  **==>Do do, viec xep theo lop cac source files giong nhu tren se giup linh hoat va giam viec lap lai code**
+  
+  ### 6.Compile a device tree
+  
+  The bootloader va kernel yeu cau mot file binary cua device tree, do do device tree can phai duoc bien dich bang the device tree compiler, dtc. Ket qua la tao ra file device tree binary .dtb.
+  
+  dtc nam trong thu muc *scripts/dtc/dtc* cua Linux source, co the dung dtc de compile mot simple device tree (nhung file dts khong su dung #include):
+  
+  ```
+  $ dtc simpledts-1.dts -o simpledts-1.dtb
+  DTC: dts->dts on file "simpledts-1.dts"
+  ```
+  
+  De co the compile cac file phuc tap hon, can phai su dung kernel kbuild se duoc gioi thieu trong chapter tiep theo.
+  
+  ### 7. Choosing a bootloader
+  
+  Co nhieu loai bootloaders khac nhau:
+  | Name | Architectures |
+  |:--|:--|
+  | Das U-Boot | ARM, Blackfin, MIPS, PowerPC, SH |
+  | Barebox | ARM, Blackfin, MIPS, PowerPC |
+  | GRUB 2 | X86, X86_64 |
+  | RedBoot | ARM, MIPS, PowerPC, SH |
+  | CFE | Broadcom MIPS |
+  | YAMON | MIPS |
+  
+  Chung ta se tap trung vao U-Boot (ten day du la Das U-Boot) vi no supports nhieu processor architectures.
+  Co the ban se nhan duoc mot bootloader cung voi SoC hoac board cua ban, tuy nhien, co the ban muon su dung open source bootloader thay vi su dung tu nha cung cap.
+  
+  #### Building U-Boot:
+   ```
+  $ git clone git://git.denx.de/u-boot.git
+  $ cd u-boot
+  $ git checkout v2015.07
+   ```
+   
+  
   
   
 '''
