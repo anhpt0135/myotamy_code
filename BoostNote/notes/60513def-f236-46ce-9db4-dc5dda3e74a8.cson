@@ -1,5 +1,5 @@
 createdAt: "2019-11-20T07:22:57.145Z"
-updatedAt: "2019-11-22T09:45:12.835Z"
+updatedAt: "2019-11-22T11:05:37.552Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Linux Programming"
@@ -185,7 +185,31 @@ content: '''
   $ cd u-boot
   $ git checkout v2015.07
    ```
-   
+  Co hon 1000 file config cho nhung common development boards va devices trong thu muc *configs/*. Trong hau het cac truong hop, co the doan file nao can dung bang theo ten file va co the co nhieu thong tin chi tiet hon trong README files o thu muc *board/*, hoac co the tim them thong tin tren cac website hay forum huong dan.
+  
+  Vi du: Trong truong hop su dung board BeagleBone Black, co the tim duoc mot file ten *am335x_boneblack_defconfig* trong thu muc *configs/* va chung ta co the tim duoc dong chu **The binary produced by this board supports...Beaglebone Black** trong *board/ti/am335x/README*. Voi nhung thong tin nay, viec build U-boot for BeagleBone Black that don gian. (NOTE: make [board]_defconfig_)
+  
+  ```
+  $ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- am335x_boneblack_defconfig
+  $ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf-
+  ```
+  Ket qua la tao ra file u-boot.bin, u-boot.img... va co mot file MLO (SPL).
+  u-boot.img : This is u-boot.bin with a U-Boot header added, suitable for uploading to a running copy of U-Boot
+  
+  #### Cai dat U-boot:
+  Mot so SoCs co boot ROM co the doc duoc boot code tu SD cards, serial interfaces, USB...
+  Doi voi chip AM335x trong BeagleBone Black, co the load U-boot thong qua micro-SD card.
+  
+  #### Booting Linux
+  
+  Su dung command *bootm* de bat dau khoi chay kernel image:
+  
+  *bootm [address of kernel] [address of ramdisk] [address of dtb]*
+  
+  Dia chi cua kernel la can thiet, nhung co the bo qua dia chi cua ramdisk va dtb neu cau hinh kernel (kernel configuration) khong can chung. Neu co dtb nhung khong co ramdisk thi co the thay the vi tri thu 2 bang dau -:
+  *bootm 82000000 - 8300000*
+  
+  ### 8.Porting U-Boot to a new board
   
   
   
