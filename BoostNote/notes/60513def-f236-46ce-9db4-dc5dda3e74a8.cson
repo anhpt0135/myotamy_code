@@ -1,5 +1,5 @@
 createdAt: "2019-11-20T07:22:57.145Z"
-updatedAt: "2019-11-22T11:05:37.552Z"
+updatedAt: "2019-11-23T17:01:24.176Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Linux Programming"
@@ -211,6 +211,79 @@ content: '''
   
   ### 8.Porting U-Boot to a new board
   
+  Gia su ban tao ra mot board moi ten la "Nova" dua tren BeagleBone Black va ban can phai port U-Boot vao no. Tu ban phat hanh U-boot 2014.10, moi board co mot file Kconfig chua cac thong tin toi thieu duoc tao ra tu file cu boards.cfg.
+  Nhung thu muc ban can phai de y la:
+  * arch: chua ma code dac trung cho cac kien truc duoc ho tro nhu: arm, mips, powerpc...De y co thu muc arch/arm/cpu doi voi arm architecture se chua cac thu muc con cho armv7, armv8...
+  * board: chua cac code dac trung cua mot board. Vi du: board/ti/am335x.
+  * common: chua cac ham cot loi bao gom command shells va cac commands co the gio tu no, moi command trong mot file co ten *cmd_[command name].c*
+  * include: ngoai cac shared header files, thu muc nay chua mot thu muc con rat quan trong *include/configs* noi ban co the tim ra cac cau hinh cai dat cua mot board. Cac cau hinh cai dat da duoc di chuyen toi Kconfig file.
+  
+  #### Kconfig and U-Boot
+  Cach thuc ma Kconfig giai nen cac thong tin cau hinh tu Kconfig files va luu vao file *.config* se duoc thao luan trong chuong 4, Porting and Configuring the Kernel. U-boot da thong qua kconfig va kbuild voi mot thay doi, mot U-boot co the tao ra dden 3 file binaries:*a normal u-boot.bin, a Secondary Program Loader (SPL) va mot Tertiary Program Loader(TPL)*.
+  
+  |None|Normal image only|
+  |:--|:--|
+  | S:| SPL image only|
+  |T:| TPL image only|
+  |ST:| SPL and TPL images|
+  |+S:| Normal and SPL images|
+  |+T:| Normal and TPL images|
+  |+ST:| Normal, SPL and TPL images|
+  
+  Moi board co mot file cau hinh mac dinh dat trong thu muc *configs/[board name]_defconfig*.
+  **Doi voi Nova Board, ban can tao ra file ten nova_defconfig va them vao nhung dong sau:**
+  
+  ```c
+  CONFIG_SPL=y
+  CONFIG_SYS_EXTRA_OPTIONS="SERIAL1, CONS_INDEX=1, EMMC_BOOT"
+  +S:CONFIG_ARM=y
+  +S:CONFIG_TARGET_NOVA=y
+  ```
+  Line 1: tao ra SPL binary file co ten la MLO
+  Line 3: noi dung cua file *arch/arm/Kconfig* duoc included.
+  Line 4: chon board cua ban
+  Luu y: line 3 va 4 deu co +S nghia la file SPL va normal u-boot.bin duoc tao ra.
+  
+  **Trong file *arch/arm/Kconfig* them vao nhung dong sau:**
+  ```c
+  CONFIG_SPL=y
+  config TARGET_NOVA
+  bool "Support Nova!"
+  ```
+  #### Board-specific files
+  Moi board co mot thu muc con *board/[board name]* hoac *board/[vendor]/[board name]* chua nhung file sau:
+  * Kconfig: chua cac tuy chon cau hinh cho board
+  * MAINTAINERS:
+  * Makefile: de build board-specific code
+  * README:
+  Ngoai ra se co cac source files cho cac ham dac trung cua board.
+  
+  **Doi voi board Nova, dua tren board BeagleBone, dong thoi board nay dua tren TI AM335x EVM, do do, ban co the bat dau bang cach sao chep lai cac file cua am335x board:**
+  
+  ```shell
+  $ mkdir board/nova
+  $ cp -a board/ti/am335x boar/nova
+  ```
+  **Tiep theo thay doi file Kconfig de mo ta ve Nova board:**
+  ```c
+  if TARGET_NOVA
+  
+  config SYS_CPU
+  default "armv7"
+  
+  config SYS_BOARD
+  default "nova"
+  
+  config SYS_SOC
+  default "am33xx"
+  
+  config SYS_CONFIG_NAME
+  default "nova"
+  endif
+  ```
+  Tim hieu them: Porting U-boot to a new board:
+  [link1](http://portinguboottoanewboard.blogspot.com/)
+  [link2](https://archive.fosdem.org/2018/schedule/event/state_of_the_art_uboot/attachments/slides/2051/export/events/attachments/state_of_the_art_uboot/slides/2051/fosdem_2018_u_boot.pdf)
   
   
 '''
