@@ -1,5 +1,5 @@
 createdAt: "2019-11-15T02:49:05.607Z"
-updatedAt: "2019-11-15T05:13:25.348Z"
+updatedAt: "2019-11-28T07:45:31.019Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Programming Note"
@@ -55,6 +55,13 @@ content: '''
   
   ### 2. How to delete remote branch in git
   git push origin --delete auto_93_import_report_for_QA_tool
+  
+  ### 3. How to use Regular Expression
+  
+  camMac.replaceAll("(..)(?!$)", "$1:"));
+  C04A002C1DA1
+  ==>C0:4A:00:2C:1D:A1
+  
   
 '''
 linesHighlighted: []

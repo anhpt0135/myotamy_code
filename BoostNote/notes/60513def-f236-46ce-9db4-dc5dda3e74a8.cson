@@ -1,5 +1,5 @@
 createdAt: "2019-11-20T07:22:57.145Z"
-updatedAt: "2019-11-23T17:01:24.176Z"
+updatedAt: "2019-11-25T07:24:14.177Z"
 type: "MARKDOWN_NOTE"
 folder: "c59adf556f2f145052fd"
 title: "Linux Programming"
@@ -262,7 +262,7 @@ content: '''
   
   ```shell
   $ mkdir board/nova
-  $ cp -a board/ti/am335x boar/nova
+  $ cp -a board/ti/am335x board/nova
   ```
   **Tiep theo thay doi file Kconfig de mo ta ve Nova board:**
   ```c
@@ -281,6 +281,32 @@ content: '''
   default "nova"
   endif
   ```
+  SYS_CPU: armv7 ==> code trong *arch/arm/cpu/armv7* duoc compiled va linked.
+  SYS_BOARD: nova ==> cac setting se dua vao *board/nova*.
+  SYS_SOC: am33xx ==> code trong *arch/arm/cpu/armv7/am33xx* duoc included.
+  SYS_CONFIG_NAME: nova ==> header files **include/configs/nova.h** duoc su dung cho cac tuy chon cau hinh khac.
+  
+  **Ngoai file Kconfig trong thu muc board/nova, file u-boot.lds trong folder nay cung can duoc thay doi tu viec hard-coded tham chieu toi board/ti/am33x/built-in.o thanh board/nova/built-in.o.** 
+  
+  #### Configure header file
+  Moi board co mot header file trong include/configs chua phan lon cac cai dat cau hinh. Format cua file nay duoc mo ta trong README file trong U-Boot source tree.
+  
+  **Doi voi Nova board, chi can copy file am335x_evm.h den nova.h va thay doi mot so noi dung sau:
+   ```c
+   #ifndef __CONFIG_NOVA
+   #define __CONFIG_NOVA
+   #define CONFIG_SYS_LDSCRIPT "board/nova/u-boot.lds"
+   #undef CONFIG_SYS_PROMPT
+   #define CONFIG_SYS_PROMPT "nova!> "
+   ```
+   
+   #### Building and testing
+   ```shell
+   $ make CROSS_COMPILER=arm-cortex_a8-linux-gnueabi- nova_defconfig
+   $ mkae CROSS_COMPILER=arm-cortex_a8-linux-gnueabi-
+   ```
+   **Copy MLO and u-boot.img vao FAT partition cua micro-SD card.**
+  
   Tim hieu them: Porting U-boot to a new board:
   [link1](http://portinguboottoanewboard.blogspot.com/)
   [link2](https://archive.fosdem.org/2018/schedule/event/state_of_the_art_uboot/attachments/slides/2051/export/events/attachments/state_of_the_art_uboot/slides/2051/fosdem_2018_u_boot.pdf)
