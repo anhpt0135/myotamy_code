@@ -3,20 +3,16 @@
 #include <string.h>
 #include "lib.h"
 
-camdb_t *gcamdb = NULL;
-cam_func_callback_t gfunc_callback;
-int gsize;
+CALLBACKFUNC g_function = NULL;
+BUTTON_T g_button;
 
-void lib_register(cam_func_callback_t func){
-	gfunc_callback = func;
-
+void fakeEventFunc(BUTTON_T *button){
+	button->pressTime = 3;
 }
-void run(char *string){
-	gfunc_callback(gcamdb, &gsize);
-	int i;
-	for(i = 0; i < gsize; i++){
-		if((gcamdb != NULL) && (strcmp(gcamdb[i].name, string) == 0)){
-			gcamdb[i].func();
-		}
-	}
+
+void hw_register_function_callback(CALLBACKFUNC func){
+	g_function = func;
+	fakeEventFunc(&g_button);
+	if(g_function != NULL)
+		g_function(g_button);
 }
