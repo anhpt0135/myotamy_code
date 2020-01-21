@@ -1,0 +1,54 @@
+Các file biểu thị cho cắc device vật lý và cung cấp một interface cho các devices này được nằm trong thư mục /dev/
+
+FILES VÀ DEVICES
+	/dev/console : biểu thị cho system console
+	/dev/tty: để control terminal (keyboard, screen, window)
+	/dev/null: là một null device, tất cả ouput ghi tới device này đều được bỏ qua.
+
+SYSTEM CALLS VÀ DEVICE DIRVERS
+các system calls là một số hàm low-level được sử dụng để điều khiển các files và các devices. Các system calls này bao gồm:
+
+	open: để mở một file hoặc device
+	read: đọc từ một opend file hoặc device
+	write: write đến một file hoặc device
+	close: đóng file hoặc device
+	ioctl: truyền các thông tin điều khiển đến một DEVICE DRIVER
+
+
+	int open(const char *filename, int flags) //(flags: O_RDONLY, O_WRONLY, O_RDWR)
+
+	return: -1 if it fails, else succeed
+
+	size_t read(int fildes, void *buf, size_t nbytes)
+	
+	==> Doc nbytes du lieu tu file decriptor va luu tru vao buff, trả về số bytes đọc được thực tế.
+
+	size write(int fildes, void *buf, size_t nbytes)
+
+	==> Ghi vào file descriptor nbytes từ buf và trả về số bytes thực tế được ghi vào.
+
+	return: -1 if it fails.
+
+
+
+ioctl: được sử dụng để cung cấp một số thông tin hardware-specific cần thiết đến một device driver. 
+return: success: 0, -1: error
+
+
+==> Thay vì sử dụng các system calls này chúng ta có thể dùng các hàm trong standard library.
+
+fopen, fread, fwrite, fclose trong <stdio.h>
+
+	FILE *fopen (const char *filename, const char *mode);
+
+	size_t fwrite(void *ptr, size_t size, size_t nitems, FILE *stream); // return number of items được đọc vào buffer được con trỏ ptr trỏ đến.
+
+Chú ý: buffer có kích thước bằng size * nitems.
+
+
+
+
+
+
+
+
